@@ -1,10 +1,17 @@
 import React from 'react';
+import { Provider } from "react-redux";
+import Header from "./components/Header";
+import TheSoup from "./components/TheSoup";
+
+import configureStore from "./store";
+const store = configureStore()
 
 function App() {
   return (
-    <div className="App">
-      hi do you like soup
-    </div>
+    <Provider store={store}>
+      <Header />
+      <TheSoup />
+    </Provider>
   );
 }
 
