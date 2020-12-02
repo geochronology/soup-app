@@ -24,6 +24,8 @@ const TheSoup = () => {
   )
 }
 
+const mapDispatchToProps = dispatch => { }
+
 const mapStateToProps = ({ isLoading, soups, error }) => ({
   isLoading,
   soups,
