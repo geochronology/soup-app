@@ -11,8 +11,16 @@ const getSoups = async page => {
     throw new Error(data.errors)
   }
 
-  console.log(data)
   return data
 }
 
-export { getSoups }
+const getSoupNoms = async id => {
+  const response = await fetch(`${URL}/${id}/statistics${KEY}`)
+  const data = await response.json()
+  if (response.status === 400) {
+    throw new Error(data.errors)
+  }
+  return data
+}
+
+export { getSoups, getSoupNoms }

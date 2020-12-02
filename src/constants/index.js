@@ -4,4 +4,11 @@ const SOUPS = {
   SOUPIFY_FAIL_OH_NO: 'SOUP_LOAD_FAIL'
 }
 
-export { SOUPS }
+
+const NOMS = {
+  LOAD: 'NOMS_LOAD',
+  LOAD_SUCCESS: 'NOMS_LOAD_SUCCESS',
+  LOAD_FAIL: 'NOMS_LOAD_FAIL'
+}
+
+export { SOUPS, NOMS }

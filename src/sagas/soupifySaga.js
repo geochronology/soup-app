@@ -1,4 +1,4 @@
-import { call, put, select, take, takeEvery } from "redux-saga/effects";
+import { call, put, select, takeEvery } from "redux-saga/effects";
 import { SOUPS } from "../constants";
 import { getSoups } from "../api";
 import { pourSoup, soupMalfunction } from "../actions";
