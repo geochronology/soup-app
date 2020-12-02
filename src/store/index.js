@@ -5,8 +5,6 @@ import createSagaMiddleware from 'redux-saga'
 import rootReducer from "../reducers"
 import rootSaga from "../sagas"
 
-const middleware = []
-
 const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware()
 
@@ -15,7 +13,6 @@ const configureStore = () => {
   ))
   sagaMiddleware.run(rootSaga)
 
-  store.dispatch({ type: 'HELLO' })
   return store
 }
 

@@ -1,14 +1,11 @@
-import { takeEvery } from 'redux-saga/effects'
+import { all } from "redux-saga/effects";
 
-import { SOUPS } from "../constants";
-
-function* workerSaga() {
-  console.log('generating soup...')
-}
+import soupifySaga from "./soupifySaga";
 
 function* rootSaga() {
-  // Watch for image load button click
-  yield takeEvery(SOUPS.SOUPIFY, workerSaga)
+  yield all([
+    soupifySaga(),
+  ])
 }
 
 export default rootSaga

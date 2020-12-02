@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from "react-redux";
+import { soupify } from "../actions";
 
-const key = 'yZJNuA9fpZ6Z3lcrMhOPy_4RJm6vMpJsjMd93ChojOo';
+const TheSoup = props => {
+  // const [soups, setSoups] = useState([])
 
-const TheSoup = () => {
-  const [soups, setSoups] = useState([])
+  const { soups, getSoups, isLoading } = props
 
   useEffect(() => {
-    fetch(`https://api.unsplash.com/photos/?client_id=${key}&per_page=28`)
-      .then(res => res.json())
-      .then(soupResults => setSoups(soupResults))
+    console.log(getSoups)
+    console.log('asdfasd')
   }, [])
 
   return (
@@ -20,11 +20,11 @@ const TheSoup = () => {
           alt={soup.user.username}
         />
       ))}
+      <button onClick={() => getSoups()}>Moar Soup</button>
+
     </div>
   )
 }
-
-const mapDispatchToProps = dispatch => { }
 
 const mapStateToProps = ({ isLoading, soups, error }) => ({
   isLoading,
@@ -32,8 +32,12 @@ const mapStateToProps = ({ isLoading, soups, error }) => ({
   error
 })
 
+const mapDispatchToProps = dispatch => ({
+  getSoups: () => dispatch(soupify())
+})
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(TheSoup)
 

@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import { SOUPS } from "../constants";
 
 const errorReducer = (state = null, action) => {
