@@ -1,4 +1,4 @@
-import { SOUPS } from "../constants";
+import { SOUPS, NOMS } from "../constants";
 
 const soupify = () => ({
   type: SOUPS.SOUPIFY
@@ -14,8 +14,27 @@ const soupMalfunction = error => ({
   error
 })
 
+const loadSoupNoms = id => ({
+  type: NOMS.LOAD,
+  id
+})
+
+const setSoupNoms = (id, noms) => ({
+  type: NOMS.LOAD_SUCCESS,
+  id,
+  noms
+})
+
+const setSoupNomsError = id => ({
+  type: NOMS.LOAD_FAIL,
+  id
+})
+
 export {
   soupify,
   pourSoup,
-  soupMalfunction
+  soupMalfunction,
+  loadSoupNoms,
+  setSoupNoms,
+  setSoupNomsError
 }
