@@ -3,7 +3,7 @@ import React from 'react'
 export default function Header() {
   return (
     <div>
-      Soup App
+      <h1>Soup App</h1>
     </div>
   )
 }

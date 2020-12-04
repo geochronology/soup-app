@@ -7,9 +7,10 @@ import { loadSoupNoms, setSoupNoms, setSoupNomsError } from "../actions";
 function* handleNomRequest(id) {
   yield put(loadSoupNoms(id))
   const res = yield call(getSoupNoms, id)
-  console.log(res)
   yield put(setSoupNoms(id, res.downloads.total))
-  // console.log(id)
+  // yield put(setSoupNoms(id, 9000))
+  console.log(res.downloads.total)
+  // return true
 }
 
 function* watchNomRequest() {

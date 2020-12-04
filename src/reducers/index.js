@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
   soups: soupReducer,
   error: errorReducer,
   nextPage: pageReducer,
-  noms: nomReducer
+  nomData: nomReducer
 })
 
 export default rootReducer

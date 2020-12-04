@@ -16,7 +16,7 @@ const nomReducer = (state = {}, action) => {
         ...state,
         [action.id]: {
           isLoading: false,
-          noms: action.downloads, // store number of downloads here as "noms"
+          noms: action.noms, // store number of downloads here as "noms"
           error: false
         }
       }
@@ -25,7 +25,7 @@ const nomReducer = (state = {}, action) => {
         ...state,
         [action.id]: {
           isLoading: false,
-          noms: action.downloads,
+          // noms: action.noms,
           error: true // flag the error
         }
       }
